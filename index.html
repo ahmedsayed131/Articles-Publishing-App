@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>منصة المقالات</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header class="site-header">
+      <a class="brand" href="#top">مقالات<span>.</span></a>
+      <button class="theme-toggle" id="themeToggle" type="button" aria-label="تفعيل الوضع الداكن">
+        <span id="themeIcon" aria-hidden="true">🌙</span>
+        <span id="themeLabel">الوضع الداكن</span>
+      </button>
+    </header>
+
+    <main class="page-content" id="top">
+      <section class="intro">
+        <p class="eyebrow">مساحة للأفكار</p>
+        <h1>اكتب فكرتك، وشاركها مع العالم</h1>
+        <p>أنشئ مقالك وانشره بسهولة في مكتبة المقالات.</p>
+      </section>
+
+      <section class="form-card" aria-labelledby="formTitle">
+        <h2 id="formTitle">اكتب مقالاً جديداً</h2>
+        <form id="articleForm">
+          <div class="form-row">
+            <label for="articleTitle">عنوان المقال</label>
+            <input id="articleTitle" name="title" type="text" placeholder="مثال: كيف تبدأ رحلتك في البرمجة؟" required />
+          </div>
+
+          <div class="form-row">
+            <label for="articleAuthor">اسم الكاتب</label>
+            <input id="articleAuthor" name="author" type="text" placeholder="اكتب اسمك هنا" required />
+          </div>
+
+          <div class="form-row">
+            <label for="articleCategory">موضوع المقال</label>
+            <select id="articleCategory" name="category" required>
+              <option value="Programming">Programming</option>
+              <option value="Design">Design</option>
+              <option value="Marketing">Marketing</option>
+            </select>
+          </div>
+
+          <div class="form-row">
+            <label for="articleContent">تفاصيل المقال</label>
+            <textarea id="articleContent" name="content" rows="6" placeholder="اكتب تفاصيل مقالك هنا..." required></textarea>
+          </div>
+
+          <button class="publish-button" type="submit">Publish Article</button>
+        </form>
+      </section>
+
+      <section class="articles-section" aria-labelledby="articlesTitle">
+        <div class="section-heading">
+          <div>
+            <p class="eyebrow">منشورات المجتمع</p>
+            <h2 id="articlesTitle">أحدث المقالات</h2>
+          </div>
+          <span class="article-count" id="articleCount">0 مقال</span>
+        </div>
+        <div class="articles-grid" id="articlesList" aria-live="polite">
+          <p class="empty-state" id="emptyState">لا توجد مقالات بعد. كن أول من يشارك فكرته!</p>
+        </div>
+      </section>
+    </main>
+
+    <script src="script.js"></script>
+  </body>
+</html>
